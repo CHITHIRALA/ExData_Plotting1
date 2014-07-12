@@ -19,15 +19,15 @@ plot4 <- function()
   par(mfrow=c(2,2))  # 2 by 2 grid
   with(fds,
       {plot(datetime,Global_active_power, type="l",xlab="",ylab="Global Active Power")
-       plot(datetime,Voltage, type="l",xlab="",ylab="Voltage") 
+       plot(datetime,Voltage, type="l",ylab="Voltage") 
        plot(datetime,Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
        lines(datetime,Sub_metering_1,col="black")
-       lines(datetime,Sub_metering_2,col="blue")
-       lines(datetime,Sub_metering_3,col="red")
+       lines(datetime,Sub_metering_2,col="red")
+       lines(datetime,Sub_metering_3,col="blue")
        legend("topright",pch="",bty="n",lty = c(1, 1, 1),col = c( "black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
        
        
-       plot(datetime,Global_reactive_power, type="l",xlab="",ylab="Global Reactive Power" ) 
+       plot(datetime,Global_reactive_power, type="l",ylab="Global Reactive Power" ) 
       }
        )
   dev.off() #turn off device
